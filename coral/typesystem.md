@@ -20,4 +20,40 @@
 ### Typed and untyped languages
 
 程序变量在运行期间能用一个范围值。这个范围的顶部叫做这个变量的**type**。能给变量类型的语言叫**typed languages**.
-不限制变量范围的的语言叫**untyped languages**:他们没有类型或者只有一个通用的类型来定义所有值。在这些语言中运算符能接受不符合类型的参数:结果可能是任意值,错误,或者无法确定的异常.纯的λ-calculus
+
+不限制变量范围的的语言叫**untyped languages**:他们没有类型或者只有一个通用的类型来定义所有值。在这些语言中运算符能接受不符合类型的参数:结果可能是任意值,错误,或者无法确定的异常.纯的λ-calculus是无类型语言最典型的例子:
+仅有的操作符是函数，所有的值都是函数，所以操作永远不会失败...
+
+类型系统是类型语言不可分割的一部分，被用来跟踪表达式中变量的类型。类型系统被用来判断程序是否是**well bahaved**(后面讲到)
+
+类型语言中，不管语法里是否出现类型，类型系统都是存在的。如果语法中存在类型则这种语言是**explicitly typed**,否则是**implicitly typed**.没有一门主流的语言是纯粹的隐类型。但是ML和Haskell写代码的时候可以省略类型，因为类型系统会自动
+给代码加上类型。
+
+### Execution errors and safety
+
+介绍一种区分两种运行错误的方法: 一种是导致计算立即中断，另一种不太容易觉察，但是之后会造成行为异常。前者叫做**trapped errors**,后者叫做**untrapped errors**
+
+untrapped errors最简单的例子就是访问一个非法地址。比如数组下标越界。关于trapped errors的例子有处零和访问非法地址：计算立即中断(在大多数电脑架构中)
+
+如果一段代码不会造成untrapped errors，则这段代码是*安全*的。如果一门语言里所有的代码片段都是安全的，就叫做**safe language**。安全语言可以减少了大量的执行错误，但是有一条可能没注意。无类型语言通过运行时检查保证安全性。类型语言通过静态检查
+检查程序中潜在的不安全因素。这个功能就叫做**static checks**
+
+尽管安全性是程序最重要的特性，很少有一门类型语言只关注于减少untrapped errors。类型语言的目标是排除大量的trapped errors和untrapped errors。下一节我们讨论这些问题。
+
+### Execution errors and well-behaved programs
+
+在已存在的语言中，我们也需要设定一个execution errors的子集叫做**forbidden errors**. forbidden errors必须包含所有的untrapped errors且加上trapped errors的子集.
+如果一段程序没有造成forbidden errors,那么这段代码就是**good behavior**。这段代码就是安全的。一门语言中的所有代码都是好的行为，那么这门语言是**strongly checked**的。
+因此，一门强检查语言有以下特点：
+
++ 没有untrapped error发生(安全的)
++ 没有属于forbidden error的trapped error发生
++ 其他trapped error可能会发生，但那是程序员需要避免的。
+
+类型语言通过静态检查来保证程序在运行之前不会出错。这种检查过程叫做**typechecking**.执行这个检查过程的算法叫做类型检查器。通过程序检查器检查的程序是**well typed**,否则是**ill typed**。
+静态检查语言有:ML,Java和Pascal(Pascal有一些不安全特性)
+
+无类型语言对好的行为和安全性有不同的处理方式--通过充足的运行时检查排除forbidden errors。(比如他们可能会检查所有的数组边界和所有的除法操作，当forbidden errors发生的时候，生成可恢复的异常)。
+这种检查过程叫做**dynamic checking**；LISP就是这样一门语言。他的强检查既没有静态检查也没有类型系统
+
+
