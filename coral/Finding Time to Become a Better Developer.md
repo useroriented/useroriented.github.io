@@ -82,10 +82,12 @@ _总会有更新的技术_
 
 据在弗吉尼亚大学学习管理学的教授助理Allison Gabriel说: 许多研究报告表明，我们都有有限认知的资源.当你不断消耗你的资源，你就没办法保证你的工作效率了。当你资源耗尽了，
 业绩就下降了。You’re able to persist less and have trouble solving tasks
+你就越难以坚持，就越难解决问题。
 
 总是处在有负担的工作中，比如压力，疲劳和负面情绪，会消耗掉的你的精力，身体和情绪资源。
 
 The brain’s ability to self-regulate — to stay disciplined — wanes with each exercise of self-control during the day. It’s a loss of resources that must be replenished. Otherwise it becomes harder to stay on-task, be attentive and solve problems.
-
+大脑自我调节和保持稳定的能力随着你的自控行为而衰减，而这种衰减必须得到恢复。不然你就很难集中精力来来解决问题。
 
 Your mind and body need down time, and they’re going to get it whether you like it or not. So, schedule that down time. Actually plan and put on your calendar real scheduled breaks. This will allow you to take down time without feeling guilty about it. It will make work-time easier to endure because you’ll know that you have a scheduled break right around the corner.
+你的头脑和身体需要时间来休息，不管你喜不喜欢，它们总要休息的。所以你应该计划你时间，其实如果当你按照日程计划中如期休息的话，你就不会因偷懒而内疚。因为你知道你会有计划中的休息时间，所以你更容易在工作中保持状态。
