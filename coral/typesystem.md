@@ -66,3 +66,6 @@ untrapped errors最简单的例子就是访问一个非法地址。比如数组�
 和隐式的安全性。因此类型系统的目的一般都是通过区分well typed 和ill typed 来保证整个程序都处在good behavior中。
 
 但是真实情况是，静态检查语言根本无法保证安全性。因为他们的forbidden errors中没有包含untrapped errors。所以这种语言只能叫**weakly checked**(在这里也可以叫弱类型): 有的不安全行为能检测到，有的却不行...
+
+大多数无类型语言必须保证安全性(eg:lisp)。其他的那些缺乏编译时和运行时检查的语言就显得有点不好用了。注意下图:
+![safty](https://raw.githubusercontent.com/useroriented/useroriented.github.io/master/images/2015-6-30/1.png)
