@@ -1,5 +1,7 @@
 # Finding Time to Become a Better Developer
 
+_原文：https://medium.freecodecamp.com/finding-time-to-become-a-better-developer-eebc154881b2#.pbaskpyks_
+
 ![It’s not as hard as you think.](https://cdn-images-2.medium.com/max/1600/1*Y0koaXjHnJSrzB6vK4STqQ.png)
 
 是不是总是觉得没时间。没有时间去学那些你觉得能让你变得优秀的知识。没有时间回去重构你的漂亮代码。没有时间为自己的代码写单元测试。没有时间给维护你代码的兄弟写文档和注释。
@@ -15,19 +17,17 @@
 
 一个好的开发者时刻学习是没问题的，但是你正在学的东西会使你的人生造成很大的影响。
 
-## The old thing is dead. Long live the NEW, about-to-be-old thing
+_总会有更新的技术_
 
-首先，不要被那些每隔37秒就提出一条新标准的开发博客头条骗了。大多数的新技术，框架和特性都没有实际用途，所以你基本没必要去学他们。
-Those that do emerge will take a lot longer to gain adoption than the blogosphere — and the vendors who hock these new technologies — would have you believe.
- Companies are invested in their tech stack and, other than a handful of tiny tech startups, they can’t just turn on a dime. So, relax, your career is safe.
+首先，不要被那些每隔37秒就提出一条新标准的开发博客头条骗了。大多数的新技术、框架和特性最终都不会得到实际应用，所以你没必要去学他们。而那些有实用价值的新技术获得广泛应用的速度也比这些博客言论（以及这些新技术的所有者）所预计的要慢得多。每个公司都在自己的技术栈上进行过投资，没可能突然转向。所以放心吧，你不会因为没有跟进这些新技术而失业的。
+
 
 把你的学习目标集中在下面三个地方(按优先级排序):
 
 1. **原理**--当你懂其中的根本原理之后，就会很容易的学会其他新技术。如果你很懂javascript，你会很快的学会任何新的框架。如果你很懂面向对象变成，你也会很快的学会其他面向对象语言。
     深入学习原理会让你的学习效率提高10倍不止。学习基本原理的优先权是最高的。
 2. **使用最新的版本和特性**--你可能每天都会用到一堆技术。这些工具会为你和你的家人把食物放到桌子上(什么鬼)。当这些工具的新版本发布之后，是指的投入时间去学习他们的。
-3. **行业巨头支持着流行技术**--如果一个又大又知名的公司，比如谷歌，Facebook或者巨硬放出点新东西，并在业内获得一些反响，那就值得你花时间好好看看了。有一百零一个JavaScript框架都在竞争，
-    然后Angular和React胜出了。I’m not saying there won’t be disruptors that come from nowhere and become the next big thing but, more often than not, no-name tech is just noise.
+3. **行业巨头支持着流行技术**--如果一个又大又知名的公司，比如谷歌，Facebook或者巨硬放出点新东西，并在业内获得一些反响，那就值得你花时间好好看看了。有一百零一个JavaScript框架都在竞争，然后Angular和React胜出了。我不否认下一个革命性技术就可能出自草根开发者，不过大部分时候，没有名气的技术就只是噪音而已。
 
 学习时间应该是你的日程中的一部分。每天都规划处一点时间来学习。不需要多久，只需要每天花25分钟阅读和动手就行了。
 
@@ -50,7 +50,7 @@ Those that do emerge will take a lot longer to gain adoption than the blogospher
 
 曾经有个问题让我想死...我曾经同意和承诺老板和客户提出的任何问题。我不敢说不行。我害怕让任何人失望。我几乎都要睡死在我的办公桌上了，喝了很多咖啡连续写了40小时代码.
 
-At first I was a shining star. I would get a big pat on the back and I felt like a hero. But I set an expectation that was impossible to live up to. Working like that is unsustainable. Eventually, I started to burn out, get sick, and miss deadlines. I started getting a reputation as unreliable and inconsistent. It was bad news.
+一开始，我成为了明星。我得到赏识，感觉自己是个英雄。但是我的期望是无法达到的，这样的工作状态不可能持久。慢慢地我开始筋疲力尽、无法按期交付项目并得到了“不可靠”的名声。这名声可不怎么好。
 
 最后我终于懂了，真正的英雄是一贯可靠的人。这种人说的都会做到。成为这种英雄唯一的办法就是管理期望值
 
@@ -86,5 +86,6 @@ So, don’t waste time trying to shave time off a function that is barely used, 
 总是处在有负担的工作中，比如压力，疲劳和负面情绪，会消耗掉的你的精力，身体和情绪资源。
 
 The brain’s ability to self-regulate — to stay disciplined — wanes with each exercise of self-control during the day. It’s a loss of resources that must be replenished. Otherwise it becomes harder to stay on-task, be attentive and solve problems.
+
 
 Your mind and body need down time, and they’re going to get it whether you like it or not. So, schedule that down time. Actually plan and put on your calendar real scheduled breaks. This will allow you to take down time without feeling guilty about it. It will make work-time easier to endure because you’ll know that you have a scheduled break right around the corner.
