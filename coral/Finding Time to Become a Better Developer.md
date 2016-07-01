@@ -71,7 +71,7 @@ _总会有更新的技术_
 
 "Right" 意味着代码要运行可靠，并且容易重构。"fast"是说执行速度，但是在别在用户体验上造成负面效果.最总要的事是，让用户“觉得”你的程序很快.
 
-So, don’t waste time trying to shave time off a function that is barely used, 或者不要在已经快过人类眨眼速度(~300ms)的程序里节约那几毫秒时间。
+所以，不要浪费时间优化不经常执行的函数，也不要在已经快过人类眨眼速度(~300ms)的程序里节约那几毫秒时间。
 不要浪费时间重构有良好架构的代码，因为你只需要学习一些新的技术和手段然后说服你自己接受你之前写的代码。
 
 ## 5. Scheduled down time makes you more productive.
