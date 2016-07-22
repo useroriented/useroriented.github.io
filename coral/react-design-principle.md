@@ -35,7 +35,7 @@ React最关键的特性是组件的自由组合。不同的人写的组件组合
 React是实用主义的。是被Facebook的产品需求驱动的。React被一些范式影响着，比如不太主流的函数式编程，让不同技能和经验的程序员们都能理解它是react的目标。
 
 如果我们打算摒弃一些我们不喜欢的模式的时候，我们有责任考虑所有可能用到的情况和弃用之前[告诉社区可替代的方案](https://facebook.github.io/react/blog/2016/07/13/mixins-considered-harmful.html)
-如果一些有用的模式很难通过生命式的方式呈现给大家，我们会提供[命令式版本的api](https://facebook.github.io/react/docs/more-about-refs.html)。
+如果一些有用的模式很难通过声明式的方式呈现给大家，我们会提供[命令式版本的api](https://facebook.github.io/react/docs/more-about-refs.html)。
 如果我们提供一个正式的api，那么我们就会提供一个[临时可用的api](https://facebook.github.io/react/docs/context.html)直到正式api出来之前。
 
 ## Stability
@@ -52,7 +52,7 @@ However we think stability in the sense of "nothing changes" is overrated. It qu
 
 我们不会无缘无故的摒弃任何事情。我们承认这些警告有时候会带来挫败感，但是我们是在为开发体验和新特性铺路，其中很多都是社区里认为值得加进去的。
 
-比如我们在15.2.0的时候加的[未知DOM属性警告](https://facebook.github.io/react/warnings/unknown-prop.html).很多项目都受到影响了。然后修复这个警告可以让为React我们引进[自定义属性](https://github.com/facebook/react/issues/140)的功能。这就是个个警告背后的故事之一。
+比如我们在15.2.0的时候加的[未知DOM属性警告](https://facebook.github.io/react/warnings/unknown-prop.html).很多项目都受到影响了。然后修复这个警告可以让我们为React引进[自定义属性](https://github.com/facebook/react/issues/140)的功能。这就是个个警告背后的故事之一。
 
 当我们增加一条反对警告的时候，我们会给当前主要版本留点时间，然后在[下个主要版本修改](https://facebook.github.io/react/blog/2016/02/19/new-versioning-scheme.html)。如果涉及到大量且重复的手工内容，我们会放出[codemod](https://www.youtube.com/watch?v=d0pOgY8__JM)脚本自动化这些操作。
 Codemods让我们能往前走而不用停下了，我们也建议你们也这么做。
@@ -66,8 +66,8 @@ Codemods让我们能往前走而不用停下了，我们也建议你们也这么
 
 ## Scheduling
 
-虽然你的组件只是一个函数，当你使用React的时候你也没必要直接调用这个函数。每个组件都会返回[需要渲染的内容](https://facebook.github.io/react/blog/2015/12/18/react-components-elements-and-instances.html#elements-describe-the-tree),这些内容可能包括用户写的组件<LikeButton>和默认组件<div>.
-React会在之后的递归中根据结果自动调用<LinkButton>然后改变UI树
+虽然你的组件只是一个函数，当你使用React的时候你也没必要直接调用这个函数。每个组件都会返回[需要渲染的内容](https://facebook.github.io/react/blog/2015/12/18/react-components-elements-and-instances.html#elements-describe-the-tree),这些内容可能包括用户写的组件`<LikeButton>`和默认组件`<div>`.
+React会在之后的递归中根据结果自动调用`<LinkButton>`然后改变UI树
 
 这是一个很小的特性，但是非常有用。你不需要调用组件函数，交给React去做，也就意味着React有能力延迟调用它直到React觉得需要调用了。现在版本的React会调用整个更新数的render方法，然后递归生成新树。
 未来我们可能会[延迟更新避免丢帧](https://github.com/facebook/react/issues/6170)
