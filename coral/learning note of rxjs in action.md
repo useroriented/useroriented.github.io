@@ -93,3 +93,58 @@ Stream([1, 2, 3, 4, 5])
 线性的冒泡事件(coral: 事件就是值本身),然后通过管道被转换。最终到达各个subscriber。
 
 ### Abstracting the notion of time from your programs
+
+讲真，**time is of the essence**。异步流代码处理等待时间是最难的部分。callback和promise都因为自身的限制仍然处理不了这个问题。rxjs把**continuous sequences of events over time**的概念作为语言的一等公民
+带给了JavaScript，最终成为了JavaScript的一个真正的事件子系统。也就意味着，rxjs*abstracts over time under the same programming model*，所以你能够写同步线性的改变你的数据。
+这是非常亮的，你可以像处理一个数组一样处理一段鼠标事件了。
+
+Stream就像你在现实世界中订阅了月刊杂志一样。我们订阅的是一个被事件分隔的杂志集合：每年有12份杂志，不过每个月收到一份。当我们收到杂志之后我们会产生一些行为(阅读或者扔掉)。
+因为我们只在收到杂志之后做出行为，我们称这种行为为响应。
+
+![magazine](https://raw.githubusercontent.com/useroriented/useroriented.github.io/master/images/rxjs-in-action/magazine.png)
+
+rxjs允许你像订阅杂志一样订阅其他东西，比如从硬盘加载文件，处理用户输入，处理类似rss和twitter的实时服务。rxjs允许你用处理同步数据的方式处理异步事件流：
+
+```js
+Stream(loadMagazines('/subscriptions/magazines'))
+  .filter(magazine => magazine.month === 'July')
+  .subscribe(
+      magazine => {
+        console.log(magazine.title);
+        //-> prints Dr. Dobbs "Composing Reactive Animations"   
+      }
+);
+```
+
+### Components of an Rx Stream
+
+Rxjs stream由一些基础组件组成。你也许在其他地方知道了。这里我们正式介绍下他们是：
+
++ Producers
++ Consumers
++ Data pipeline
++ Time
+
+#### Producers
+
+Producers是我们的数据源，一条流至少需要一个数据源，作为一切的开始。实际上，producer可以从任何可以产生事件的的数据源创建(单个值，数组，鼠标点击，文件流).
+在Observer模式中定义producers为Subject。但是在rxjs中，我们称之为Observables，表示可以被observed。
+
+#### Consumers
+
+Producer才是一半，我们还需要一个consumer接收事件和处理事件。当consumer开始监听producer，这条流才会开始push事件
+
+#### DATA PIPELINE
+
+rxjs高级的地方在于我们可以在事件从producer流向customer的途中操作和编辑事件。这就是操作符(Observable方法)所扮演的角色。操作数据意味着我们能让customer拿到期望中的值。
+这么做在两个实体之间产生了*separation of concern*和模块性。这种设计原则在大型场景的JavaScript程序中很难实现，但是rxjs可以完成。
+
+#### TIME
+
+rxjs有个潜在的组件叫时间，之后会详细介绍。现在你只需要知道时间不一定是正常速度，如果你需要你可以让他变慢或者变快。幸运的是，如果你决定用rxjs，这就不是事。
+
+这是这些组件具体的样子：
+
+![compoennts](https://raw.githubusercontent.com/useroriented/useroriented.github.io/master/images/rxjs-in-action/components-of-rxjs.png)
+
+你可以用这些写出你自己的响应式设计。但是rxjs不会强迫你只用一种范式。你可以充分组合利用他们创造出更有弹性更好维护的设计。
