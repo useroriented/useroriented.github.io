@@ -148,3 +148,34 @@ rxjs有个潜在的组件叫时间，之后会详细介绍。现在你只需要�
 ![compoennts](https://raw.githubusercontent.com/useroriented/useroriented.github.io/master/images/rxjs-in-action/components-of-rxjs.png)
 
 你可以用这些写出你自己的响应式设计。但是rxjs不会强迫你只用一种范式。你可以充分组合利用他们创造出更有弹性更好维护的设计。
+
+实际生产中，你可以用oop设计你的系统，也可以用frp驱动你的行为和事件。和oop那样把状态和数据存在变量或者集合里不一样，状态在rp里是暂时的，状态不会保存下来但是会流过订阅他的流。
+这让事件处理容易推理和测试了。
+
+### Exploring the advantages of RxJS
+
+这章我们重点介绍如何用rxjs让你从异步代码中解脱出来，他们是：
+
++ Declarative design
++ Event handling and cancellation
++ Error handling
++ Testability
+
+#### DECLARATIVE DESIGN
+
+当前的异步解决方案都有个共同的问题，很难写出声明式的代码。语言被设计出来解决同步代码，加上异步非线性的本质，导致了代码能在函数中有序排列，却不用在调用时线性调用。因此我们需要跟踪当前
+执行状态，然后有了callback和promise。rxjs从fp中给我们带来了简单和声明式设计。你将不再需要创建一个变量来跟踪回调处理，也不用再担心一不小心修改产生了外部状态这种副作用代码。此外，rxjs让我们
+很轻松的管理多条数据流，过滤或者转换他们都变得很轻松。通过操作符把程序逻辑串起来，就像一条句子。可组合的特性也让创建高阶操作符变得轻松容易。合并流也让我们能设计出更复杂的行为。
+
+#### EVENT HANDLING AND CANCELLATION
+
+流总是有开始和结束。在流的生命周期中，当订阅者开始监听(subscription)或者停止监听producer的时候，我们需要知道发生了什么。
+
+当Observable停止发送事件，或者已完成，rxjs会自动清理已分配的资源，这在避免事件监听泄露上相对于其他库有巨大的优势。另外，subscription对象是由observable生成的，包含了一个自毁开关。
+你可以用它来取消在运行中的操作符和自动清理资源。
+
+#### ERROR HANDLING
+
+之前提到的，用同步编程设计的语言在异步的世界中不那么好使了。其中一种设计try/catch，很难围绕传统的callback机制来实现。开发者必须经常创建和储存错误信息以交给后面的逻辑处理，这种方式不够模块化，
+这样反而更容易出错，并且有副作用。聪明的决定就是用rxjs。错误会在Observable里安全的传播到各自的observers中。错误发生时，你的逻辑会立即中断，这非常像try/catch。Promise在处理错误方面和rxjs非常相似。
+但是promise不能惰性执行，也不能重新执行已reject的promise。
