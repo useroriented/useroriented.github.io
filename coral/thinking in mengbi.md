@@ -4,7 +4,7 @@
 
 ## redux 的缺点
 
-不用redux那就要那redux开刀，为什么不用redux，因为它的这些缺点：
+不用redux那就要拿redux开刀，为什么不用redux，因为它的这些缺点：
 
 1、 action和reducer太繁琐。一套或者几套action和reducer的组合，看起来很不错，但是一旦功能和需求多了，action和reducer就会很混乱，如果管理不善，都不能愉悦的写代码了。比如你一个人开发你自己的博客的时候，独自面对大量的action和reducer和store，不知道会不会头疼。所以redux是不适合小场景的。微服务好，也不是什么系统都适合的。
 
@@ -243,6 +243,8 @@ function toObservable(source: any) {
 以上所有代码都可以在这里找到: [todo](https://github.com/huangbinjie/meng/tree/master/example/todo)
 
 ## 最后
+
+不要试图说服我redux是最棒的。因为我和你的观点是一样的。redux是现阶段最好的架构！
 
 用rxjs配合react的方法有很多种，有继承: `extends StoreComponent`。有组合: `store(ReactComponent)`。也有直接修改react的: `onClick(): click$`。所以我这种实现方式还有很多其他版本的。
 
