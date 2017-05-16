@@ -156,3 +156,7 @@ Object-C 有`nonnull`
 这些方法或许有用，但是还不是银弹。大多数的代码都没用到这些。你需要花时间去修复和加上这些。还有些情况是一些编程语言就是用null作为默认值的。
 
 ## Option type
+
+[Option type](https://www.wikiwand.com/en/Option_type)有很多出名的实现，比如:`Nullable<T>`, `Optional<T>`, `Option<T>` 和 `Maybe<T>`。在不同的语言中，T表示数据类型。这种类型允许你直白的表示值是有可能为空的，如果想要得到非空的值，需要做特殊处理。
+
+option type已经在haskell和F#应用得很好了。但是需要对做转换才能拿到非空值，比如`if-else`。反过来说，那也说明很容易拿到内部值，都不需要检查，也不能被检查出异常。
